@@ -1,0 +1,90 @@
+# CLD-0101: Service Account Authentication Failures
+
+## Alert Summary
+
+Rule "Repeated authentication failures (service account)" fired after 18 failed sign-ins (error 50126 - invalid credentials) for `svc-backup@cloudora.io` between 23:41 and 00:03 UTC. A successful sign-in occurred at 00:14 UTC from `203.0.113.20` (`LDN-SRV-BK1`), the internal backup server.
+
+Source System: Identity Monitoring (Entra ID)
+
+Alert Time: 2026-08-31 23:41:07 UTC
+
+---
+
+## Hypothesis (Both Directions)
+
+- Malicious: An attacker is attempting to brute-force a service account.
+
+- Benign: The failed authentications are the result of a scheduled backup credential rotation.
+
+---
+
+## Evidence Checked
+
+- Reviewed `cloudora_signin_slice.csv`.
+
+- Reviewed the shift handover documentation.
+
+- Verified change record `CHG-2088`.
+
+- Confirmed that a backup credential rotation was scheduled between 23:00 and 02:30 UTC.
+
+- Confirmed that all failed authentications originated from `LDN-SRV-BK1`.
+
+- Confirmed that the successful authentication at 00:14 UTC originated from the same host.
+
+---
+
+## Investigation
+
+The authentication failures were initially investigated as a possible brute-force attempt against a service account.
+
+The shift handover identified `CHG-2088`, which documented an approved backup credential rotation during the same time frame as the authentication failures.
+
+The successful sign-in from the same internal backup server supported the maintenance activity explanation.
+
+---
+
+## Verdict
+
+False Positive.
+
+---
+
+## Severity
+
+Informational – Expected and authorized activity.
+
+### Why This Severity Was Assigned
+
+The alert was originally classified as High severity. After reviewing the change record and authentication timeline, the activity was reclassified as Informational because it matched an approved maintenance window.
+
+---
+
+## Action Taken
+
+- Closed the alert.
+
+- Referenced `CHG-2088`.
+
+- Recommended suppressing service account authentication failures during approved maintenance windows.
+
+---
+
+## Justification
+
+The source, timing, and successful authentication matched the approved credential rotation.
+
+---
+
+## MITRE ATT&CK
+
+None.
+
+False-positive alerts do not receive a MITRE ATT&CK mapping.
+
+---
+
+## Screenshots
+
+- Authentication events.
+
