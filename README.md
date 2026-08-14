@@ -4,9 +4,9 @@
 
 This repository documents a simulated Tier 1 SOC morning shift involving the investigation and triage of 11 security alerts across identity, email, cloud, endpoint, and network security.
 
-Each alert was investigated using a structured workflow that included reviewing the alert, developing a hypothesis, analyzing the available evidence, establishing a baseline, reassessing severity, documenting findings, and determining the appropriate response.
+Each alert was managed through a ticket-driven workflow that included reviewing the alert in the ticketing system, developing a hypothesis, analyzing the available evidence, establishing a baseline, reassessing severity, documenting findings, and determining the appropriate response.
 
-The goal of this project was to simulate a real SOC shift by producing clear, evidence-based verdicts and creating analyst handover documentation for the next shift.
+The goal of this project was to simulate a real SOC shift by producing clear, evidence-based verdicts, documenting investigations, and creating analyst handover notes for the next shift.
 
 ---
 
@@ -14,6 +14,7 @@ The goal of this project was to simulate a real SOC shift by producing clear, ev
 
 - Alert triage
 - Incident investigation
+- Ticket management
 - Email header analysis
 - Sign-in analysis
 - User baseline development
@@ -30,13 +31,14 @@ The goal of this project was to simulate a real SOC shift by producing clear, ev
 
 ## Tools Used
 
+- ServiceNow
 - Azure Data Explorer
 - Kusto Query Language (KQL)
 - Microsoft Entra ID sign-in logs
 - Cloudora audit logs
 - Email header analysis
 - AbuseIPDB
-- MITRE ATT&CK
+- MITRE ATT&CK Framework
 
 ---
 
@@ -62,9 +64,10 @@ The goal of this project was to simulate a real SOC shift by producing clear, ev
 
 Each alert is organized into its own folder and includes:
 
-- The final verdict
-- Evidence reviewed
+- The original ServiceNow ticket
 - Investigation notes
+- Evidence reviewed
+- The final verdict
 - Severity reassessment
 - Recommended actions
 - MITRE ATT&CK mapping (when applicable)
