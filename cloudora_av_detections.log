@@ -1,0 +1,11 @@
+# Cloudora endpoint protection, detection log excerpt (UTC)
+# Exported for triage shift 2026-09-01. Synthetic training data.
+
+2026-08-28T11:02:44Z | MAN-LT-021 | finn.gale | PUA:Win32/BundledToolbar | C:\Users\finn.gale\Downloads\pdf_converter_setup.exe | SHA1 ce8038a39d5e0853964b50af03b971722f244f58 | Action: Quarantine | Result: Success
+2026-08-30T22:00:02Z | LDN-WS-117 | (system) | Scheduled quick scan started | - | - | Action: Scan | Result: Started
+2026-08-30T22:14:51Z | LDN-WS-117 | (system) | Scheduled quick scan completed, no threats found | - | - | Action: Scan | Result: Clean
+2026-09-01T02:13:09Z | LDN-WS-117 | liam.doyle | Trojan:Win32/Stealgen.B | C:\Users\liam.doyle\AppData\Roaming\WinSyncSvc\wsync.exe | SHA1 05da846a32c3bb81e3c29b62179273c8eb5bb682 | Action: Quarantine | Result: FAILED (file in use)
+2026-09-01T02:19:47Z | LDN-WS-117 | liam.doyle | Trojan:Win32/Stealgen.B | C:\Users\liam.doyle\AppData\Roaming\WinSyncSvc\wsync.exe | SHA1 05da846a32c3bb81e3c29b62179273c8eb5bb682 | Action: Quarantine | Result: FAILED (access denied)
+2026-09-01T02:27:30Z | LDN-WS-117 | liam.doyle | Trojan:Win32/Stealgen.B | C:\Users\liam.doyle\AppData\Roaming\WinSyncSvc\wsync.exe | SHA1 05da846a32c3bb81e3c29b62179273c8eb5bb682 | Action: Quarantine | Result: FAILED (file recreated)
+2026-09-01T02:41:12Z | LDN-WS-117 | liam.doyle | Trojan:Win32/Stealgen.B | C:\Users\liam.doyle\AppData\Roaming\WinSyncSvc\wsync_upd.exe | SHA1 575ec87a171ac826a6fce48478dcb74f21345d2c | Action: Quarantine | Result: FAILED (file in use)
+2026-09-01T08:00:00Z | (digest) | - | Daily summary: 1 device with active unresolved threats (LDN-WS-117) | - | - | Action: Report | Result: Sent
